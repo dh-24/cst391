@@ -13,12 +13,12 @@ export const readAlbumsByArtist = async (artistName: string) => {
 
 export const readAlbumsByArtistSearch = async (search: string) => {
     console.log('search param', search);
-    return execute<Album[]>(albumQueries.readAlbumsByArtistSearch, [search]);
+    return execute<Album[]>(albumQueries.readAlbumsByArtistSearch, [`%${search}%`]);
 };
 
 export const readAlbumsByDescriptionSearch = async (search: string) => {
     console.log('search param', search);
-    return execute<Album[]>(albumQueries.readAlbumsByDescriptionSearch, [search]);
+    return execute<Album[]>(albumQueries.readAlbumsByDescriptionSearch, [`%${search}%`]);
 };
 
 export const readAlbumsByAlbumId = async (albumId: number) => {
@@ -26,11 +26,11 @@ export const readAlbumsByAlbumId = async (albumId: number) => {
 };
 
 export const createAlbum = async (album: Album) => {
-    return execute<OkPacket>(albumQueries.createAlbum, [album.title, album.artist, album.year, album.image, album.description, album.albumId]);
+    return execute<OkPacket>(albumQueries.createAlbum, [album.title, album.artist, album.description, album.year, album.image]);
 };
 
 export const updateAlbum = async (album: Album) => {
-    return execute<OkPacket>(albumQueries.updateAlbum, [album.title, album.artist, album.year, album.image, album.description, album.albumId]);
+    return execute<OkPacket>(albumQueries.updateAlbum, [album.title, album.artist, album.description, album.year, album.image,  album.albumId]);
 };
 
 export const deleteAlbum = async (albumId: number) => {

@@ -26,4 +26,8 @@ router.
     route('/albums/:albumId').
     delete(AlbumsController.deleteAlbum); 
 
+router
+    .route('/albums/:albumId')
+    .put(AlbumsController.updateAlbum);
+
 export default router;

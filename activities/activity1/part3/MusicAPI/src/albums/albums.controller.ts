@@ -104,18 +104,24 @@ export const createAlbum: RequestHandler = async (req: Request, res: Response) =
     }
 };
 
+// controller method to update an album
 export const updateAlbum: RequestHandler = async (req: Request, res: Response) => {
     try {
+        // call the DAO to update the album in the database
         const okPacket: OkPacket = await AlbumDao.updateAlbum(req.body);
 
+        // log the request body for debugging
         console.log('req.body', req.body);
 
+        // log the result of the album update
         console.log('album', okPacket);
 
+        // loop through each track in the album and update it individually
         req.body.tracks.forEach(async (track: Track, index: number) => {
             try {
-                await TracksDao.updateTrack(track);
+                await TracksDao.updateTrack(track); // update each track in the dabase
             } catch (error) {
+                // if update track fails, log the error and send a 500 response
                 console.error('[albums.controller][updateAlbum][Error] ', error);
                 res.status(500).json({
                     message: 'There was an error when updating album tracks'
@@ -123,10 +129,12 @@ export const updateAlbum: RequestHandler = async (req: Request, res: Response) =
             }
         });
 
+        // if everything succeeds, send 200 OK response with album update result
         res.status(200).json(
             okPacket
         );
     } catch (error) {
+        // if updating album fails, log error and send 500 response
         console.error('[albums.controller][updateAlbum][Error] ', error);
         res.status(500).json({
             message: 'There was an error when updating albums'
