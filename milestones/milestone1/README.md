@@ -2,7 +2,7 @@
 
 - Author: Daniel Hanson
 - Date: 9/7/2025
-- Project Name: 
+- Project Name: Bible Notebook App
 
 ## Introduction
 
