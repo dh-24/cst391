@@ -78,27 +78,27 @@ Wireframe sketches showing how the pages will look:
 
 Home page
 
-![Home page](/cst391/milestones/milestone1/images/homePage.png)
+![Home page](images/homePage.png)
 
 
 Browse books
 
-![Browse books](/cst391/milestones/milestone1/images/browseBooks.png)
+![Browse books](images/browseBooks.png)
 
 
 Select chapter
 
-![Select chapter](/cst391/milestones/milestone1/images/selectChapter.png)
+![Select chapter](images/selectChapter.png)
 
 
 Notes page
 
-![Notes page](/cst391/milestones/milestone1/images/notesPage.png)
+![Notes page](images/notesPage.png)
 
 
 My notes
 
-![My notes](/cst391/milestones/milestone1/images/myNotes.png)
+![My notes](images/myNotes.png)
 
 
 
