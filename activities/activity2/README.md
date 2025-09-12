@@ -5,6 +5,7 @@
 
 ## Introduction
 
+This assignment goes over the default structure of an Angular project. The goal is to understand how Angular organizes files and folders and how the templates work together. This also covers how the framework generates a web page in the brower. 
 
 ## Activity 2 Commands
 ```
