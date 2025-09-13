@@ -38,44 +38,20 @@ ng new testapp
 
 ## Research
 
-- **node_modules:**
-     - Contain the npm packages and dependencies for the project to compile and run.
 
+| File/Folder          | Purpose                                                                 |
+|----------------------|-------------------------------------------------------------------------|
+| **node_modules/**    | Contains the npm packages and dependencies for the project to compile and run. |
+| **src/**             | Source folder for the application. Contains the code, templates, and styles that you write for the app. |
+| **src/app/**         | Holds the main application logic and structure (.ts, .html, and .css files). |
+| **src/assets/**      | Folder for static assets like images, fonts, and icons. |
+| **src/environments/**| Defines different settings for development and production. |
+| **main.ts**          | Entry point, bootstraps the root component and starts the Angular app. |
+| **app.component.css**| Defines CSS styles that apply to `AppComponent`. |
+| **app.component.html**| Contains HTML structure for the component which Angular renders in the DOM. |
+| **app.component.ts** | Contains logic, properties, and methods for the component. |
+| **app.module.ts**    | Declares components, imports Angular modules, and services needed for the app. |
 
-- **src/:** 
-     - Source folder for the application. Contains the code, templates, and styles that you write for the app. 
-
-
-- **src/app/:**
-     - Holds the main application logic and structure. (.ts, .html, and .css files)
-
-
-- **src/assets/:**
-     - Folder for static assets like images, fonts, and icons.
-
-
-- **src/environments/:**
-     - Lets you define different settings for development and production.
-
-
-- **main.ts**:
-     - Entry point, bootstraps the root component and starts the Angular app.
-
-
-- **app.component.css**:
-     - Defines CSS styles that apply to AppComponent
-
-
-- **app.component.html**:
-     - Contains HTML structure for component which Angular renders in the DOM
-
-
-- **app.component.ts**:
-     - Contains logic, properties, and methods for the component. 
-
-
-- **app.module.ts**:
-     - Declares components, imports Angular modules, and services needed for app.
 
 
 
