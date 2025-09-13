@@ -15,6 +15,11 @@ All requirements were met:
 - Risks about the project were mentioned
 - Conclusion wrapped up the page
 
+Response:
+- Modified the notes class properties to be more descriptive and updated database design to match.
+- Added REST endpoints.
+- Added API example API requests.
+
 ## Introduction
 The Bible Notebook App is a web application designed to help users take notes on Bible chapters and verses they read.  Users can create, view, edit, and delete notes for different chapters. The app allows users to tag notes, and mark favorites. This application will be built using a MySQL database, Express.js for the back-end, and both Angular and React for the front-end.
 
@@ -104,7 +109,7 @@ The main entity is **Note** with the following properties:
 | Property     | Type        | Description                         |
 |-------------|------------|-------------------------------------|
 | id          | number     | Primary key                         |
-| book        | string     | Bible book (Genesis)
+| book        | string     | Bible book (Genesis)                |
 | chapter     | string     | Chapter reference (1)               |
 | note_text   | text       | The user's note content             |
 | tags        | string     | Optional keywords                   |
@@ -112,7 +117,7 @@ The main entity is **Note** with the following properties:
 | favorite    | boolean    | Indicates if the note is important  |
 
 
-### ER Diagram Placeholder
+### ER Diagram
 ![ER Diagram](images/erDiagram.png) 
 
 ## UML Class Diagrams (Refined)
@@ -121,7 +126,6 @@ The main entity is **Note** with the following properties:
   - `id: number`
   - `book: string`
   - `chapter: int`
-  - `verse: int`
   - `note_text: string`
   - `tags: string`
   - `created_at: datetime`
@@ -145,7 +149,7 @@ The main entity is **Note** with the following properties:
 ## REST Endpoints
 - The Endpoints used in this application follow REST conventions.
 - Plural nouns are used as resources.
----
+
 
 |Method|Endpoint|Description|
 |--|--|--|
@@ -165,12 +169,12 @@ The main entity is **Note** with the following properties:
 ## API Example API Requests
 **GET /notes**
 ```
+Response:
 [
     {
         "id": 1,
         "book": "Ephesians",
         "chapter": 5,
-        "verse": 25,
         "note_text": "Husbands love your wives as Christ loved the church."
         "tags": ["husband", "love"],
         "created_at": 2025-09-13T10:07:00,
@@ -180,7 +184,6 @@ The main entity is **Note** with the following properties:
         "id": 2,
         "book": "Philippians",
         "chapter": 2,
-        "verse": 3,
         "note_text": "Have humility and see others how Christ sees them."
         "tags": ["selflessness", "humility"],
         "created_at": 2025-09-13T10:07:00,
@@ -199,7 +202,6 @@ Request:
 {
     "book": "Romans",
     "chapter": 5,
-    "verse": 1,
     "note_text": "We are justified by faith in Christ."
     "tags": ["faith", "justification"],
     "created_at": 2025-09-13T10:07:00,
@@ -214,7 +216,6 @@ Response:
     "id": 3,
     "book": "Romans",
     "chapter": 5,
-    "verse": 1,
     "note_text": "We are justified by faith in Christ."
     "tags": ["faith", "justification"],
     "created_at": 2025-09-13T10:07:00,
@@ -229,7 +230,6 @@ Request:
 {
     "book": "Romans",
     "chapter": 5,
-    "verse": 1,
     "note_text": "We are justified by faith and have peace with God through Christ."
     "tags": ["faith", "justification", "peace"],
     "created_at": 2025-09-13T10:10:00,
@@ -243,7 +243,6 @@ Response:
     "id": 3,
     "book": "Romans",
     "chapter": 5,
-    "verse": 1,
     "note_text": "We are justified by faith and have peace with God through Christ."
     "tags": ["faith", "justification", "peace"],
     "created_at": 2025-09-13T10:10:00,
