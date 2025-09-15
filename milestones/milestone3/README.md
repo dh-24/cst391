@@ -3,6 +3,10 @@
 - Author: Daniel Hanson
 - Date: 9/14/2025
 
+## Recordings
+- [Link to powerpoint video](https://www.loom.com/share/264b204106e34cf297d9463930f8a755?sid=1d2fef1c-5e4e-4687-a406-273020e78a2d) 
+- [Link to API and database video](https://www.loom.com/share/d3cc1e654fbe4420870d0baebdf333a4?sid=0c17cbd9-ee6a-4f15-b0dd-f7c4a4face38)
+  
 ## Introduction
 The Bible Notebook App is a web application designed to help users take notes on Bible chapters and verses they read.  Users can create, view, edit, and delete notes for different chapters. The app allows users to tag notes, and mark favorites. This application will be built using a MySQL database, Express.js for the back-end, and both Angular and React for the front-end.
 
