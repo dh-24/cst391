@@ -30,27 +30,44 @@ These updates ensure the design plan is now fully aligned with the delivered sof
 
 ## Postman Screenshots
 
-
+```
+http://localhost:3000/notes
+```
 ![Get Notes](images/getNotes.png)
 - List all notes in biblenotebook database.
 <br>
-
+---
+```
+http://localhost:3000/notes/2
+```
 ![Get Note by ID](images/getNoteById.png)
 - Retrieve a note by its ID.
 <br>
-
+---
+```
+http://localhost:3000/notes/search/tag/marriage
+```
 ![Search by Tag](images/searchByTag.png)
 - Search notes by tags.
 <br>
-
+---
+```
+http://localhost:3000/notes
+```
 ![Create a Note](images/createNote.png)
 - Create a new chapter note.
 <br>
-
+---
+```
+http://localhost:3000/notes/4
+```
 ![Update a New Note](images/updateNote.png)
 - Update a note.
 <br>
-
+---
+```
+http://localhost:3000/notes/4
+```
 ![Delete a Note](images/deleteNote.png)
 - Delete a note.
 <br>
