@@ -184,39 +184,6 @@ Home
 │   └── Account Info
 ```
 
-## Wireframes
-
-Wireframe sketches showing how the pages will look:
-
-- **Home Page:** List view with note titles, tags, and favorite indicators.  
-- **Create/Edit Note Page:** Form with chapter, note text, tags, and favorite checkbox.  
-- **Note Details Page:** Full note display with edit and delete buttons.
-
-
-
-Home page
-
-![Home page](images/homePage.png)
-
-
-Browse books
-
-![Browse books](images/browseBooks.png)
-
-
-Select chapter
-
-![Select chapter](images/selectChapter.png)
-
-
-Notes page
-
-![Notes page](images/notesPage.png)
-
-
-My notes
-
-![My notes](images/myNotes.png)
 
 
 ## Database Design
