@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h2>My Notes</h2>
+  <a routerLink="/create" class="btn btn-primary mb-3">Add Note</a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Book</th>
+        <th>Chapter</th>
+        <th>Note</th>
+        <th>Tags</th>
+        <th>Favorite</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let note of notes">
+        <td>{{ note.book }}</td>
+        <td>{{ note.chapter }}</td>
+        <td>{{ note.note_text }}</td>
+        <td>{{ note.tags }}</td>
+        <td>{{ note.favorite ? "Yes" : "No" }}</td>
+        <td>
+          <a [routerLink]="['/edit', note.id]" class="btn btn-sm btn-warning">Edit</a>
+          <button (click)="deleteNote(note.id)" class="btn btn-sm btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

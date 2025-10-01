@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2>Add Note</h2>
+  <form (ngSubmit)="saveNote()" #noteForm="ngForm">
+
+    <div class="form-group mb-3">
+      <label for="book">Book</label>
+      <input type="text" id="book" class="form-control" [(ngModel)]="note.book" name="book" required />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="chapter">Chapter</label>
+      <input type="number" id="chapter" class="form-control" [(ngModel)]="note.chapter" name="chapter" required />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="note_text">Note</label>
+      <textarea id="note_text" class="form-control" [(ngModel)]="note.note_text" name="note_text" required></textarea>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="tags">Tags</label>
+      <input type="text" id="tags" class="form-control" [(ngModel)]="note.tags" name="tags" />
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" id="favorite" class="form-check-input" [(ngModel)]="note.favorite" name="favorite" />
+      <label for="favorite" class="form-check-label">Favorite</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>

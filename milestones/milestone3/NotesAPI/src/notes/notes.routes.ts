@@ -1,61 +1,33 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import * as NotesController from "./notes.controller";
 
 const router = Router();
 
 // GET all notes
-router.get("/", async (_req: Request, res: Response) => {
-  const notes = await NotesController.getAllNotes();
-  res.json(notes);
-});
+router.get("/", NotesController.getAllNotes);
 
 // GET note by ID
-router.get("/:id", async (req: Request, res: Response) => {
-  const note = await NotesController.getNoteById(Number(req.params.id));
-  res.json(note || { message: "Note not found" });
-});
+router.get("/:id", NotesController.getNoteById);
 
 // POST create note
-router.post("/", async (req: Request, res: Response) => {
-  const newNote = await NotesController.createNote(req.body);
-  res.status(201).json(newNote);
-});
+router.post("/", NotesController.createNote);
 
 // PUT update note
-router.put("/:id", async (req: Request, res: Response) => {
-  const updated = await NotesController.updateNote(Number(req.params.id), req.body);
-  res.json(updated);
-});
+router.put("/:id", NotesController.updateNote);
 
 // DELETE note
-router.delete("/:id", async (req: Request, res: Response) => {
-  const result = await NotesController.deleteNote(Number(req.params.id));
-  res.json(result);
-});
+router.delete("/:id", NotesController.deleteNote);
 
 // GET notes by book + chapter
-router.get("/book/:bookId/chapter/:chapterId", async (req: Request, res: Response) => {
-  const { bookId, chapterId } = req.params;
-  const notes = await NotesController.findNotesByChapter(Number(bookId), Number(chapterId));
-  res.json(notes);
-});
+router.get("/book/:bookId/chapter/:chapterId", NotesController.findNotesByChapter);
 
 // GET notes by tag
-router.get("/search/tag/:tag", async (req: Request, res: Response) => {
-  const notes = await NotesController.findNotesByTag(req.params.tag);
-  res.json(notes);
-});
+router.get("/search/tag/:tag", NotesController.findNotesByTag);
 
 // GET favorite notes
-router.get("/favorites", async (_req: Request, res: Response) => {
-  const notes = await NotesController.getFavoriteNotes();
-  res.json(notes);
-});
+router.get("/favorites", NotesController.getFavoriteNotes);
 
 // PUT mark as favorite
-router.put("/:id/favorite", async (req: Request, res: Response) => {
-  const note = await NotesController.markFavorite(Number(req.params.id));
-  res.json(note);
-});
+router.put("/:id/favorite", NotesController.markFavorite);
 
 export default router;
