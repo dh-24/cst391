@@ -1,4 +1,3 @@
-// note.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,11 +7,11 @@ import { Note } from '../models/note';
   providedIn: 'root'
 })
 export class NoteService {
-  private apiUrl = 'http://localhost:3000/notes'; //  Express API URL
+  private apiUrl = 'http://localhost:3000/notes';
 
   constructor(private http: HttpClient) {}
 
-  getNotes(): Observable<Note[]> {
+  getAllNotes(): Observable<Note[]> {
     return this.http.get<Note[]>(this.apiUrl);
   }
 
@@ -28,7 +27,7 @@ export class NoteService {
     return this.http.put<Note>(`${this.apiUrl}/${id}`, note);
   }
 
-  deleteNote(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  deleteNote(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

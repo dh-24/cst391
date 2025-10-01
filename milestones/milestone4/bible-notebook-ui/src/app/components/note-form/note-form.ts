@@ -1,18 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // <-- needed for ngModel and ngForm
-import { RouterModule, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { NoteService } from '../../services/note';
 import { Note } from '../../models/note';
 
 @Component({
   selector: 'app-note-form',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule], // <-- include FormsModule here
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './note-form.html',
   styleUrls: ['./note-form.css']
 })
-export class NoteFormComponent {
+export class NoteFormComponent implements OnInit {
   note: Note = {
     id: 0,
     book: '',
@@ -21,11 +21,34 @@ export class NoteFormComponent {
     favorite: false
   };
 
-  constructor(private noteService: NoteService, private router: Router) {}
+  isEditMode = false;
+
+  constructor(
+    private noteService: NoteService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    const idParam = this.route.snapshot.paramMap.get('id');
+    if (idParam) {
+      this.isEditMode = true;
+      const noteId = Number(idParam);
+      this.noteService.getNoteById(noteId).subscribe((data) => {
+        this.note = data;
+      });
+    }
+  }
 
   saveNote() {
-    this.noteService.addNote(this.note).subscribe(() => {
-      this.router.navigate(['/notes']); // redirect after saving
-    });
+    if (this.isEditMode) {
+      this.noteService.updateNote(this.note.id!, this.note).subscribe(() => {
+        this.router.navigate(['/notes']);
+      });
+    } else {
+      this.noteService.addNote(this.note).subscribe(() => {
+        this.router.navigate(['/notes']);
+      });
+    }
   }
 }

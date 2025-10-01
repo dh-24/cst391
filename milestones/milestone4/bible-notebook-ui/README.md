@@ -1,36 +1,36 @@
-# Milestone 3
+# Milestone 4
 
 - Author: Daniel Hanson
-- Date: 9/14/2025
+- Date: 9/28/2025
 
 ## Recordings
-- [Link to powerpoint video](https://www.loom.com/share/264b204106e34cf297d9463930f8a755?sid=1d2fef1c-5e4e-4687-a406-273020e78a2d) 
-- [Link to API and database video](https://www.loom.com/share/d3cc1e654fbe4420870d0baebdf333a4?sid=0c17cbd9-ee6a-4f15-b0dd-f7c4a4face38)
+- [Link to powerpoint video]
+- [Link to UI screencast](https://www.loom.com/share/ec1732572e6c4ef89b9c66070b36ce4b?sid=03afd3d6-816c-4f66-b505-bb4da53113d7)
   
 ## Introduction
-The Bible Notebook App is a web application designed to help users take notes on Bible chapters and verses they read.  Users can create, view, edit, and delete notes for different chapters. The app allows users to tag notes, and mark favorites. This application will be built using a MySQL database, Express.js for the back-end, and both Angular and React for the front-end.
+This milestone focuses on building a web application that works with a REST API to manage "products." The app allows users to create, view, update, and delete products through an easy-to-use web interface. Navigation has been added using a responsive Bootstrap NavBar to make the app more user-friendly.
+
+The report includes updates to the design, a summary of changes and known issues, and documentation of the REST API. It also shows how actions in the web interface affect the backend data, demonstrating the connection between the Angular frontend and the REST API.
 
 ## Design Updates
 
-The original design report in milestone 2 was only as a high-level plan. In this milestone, the entire application was built, and several details were updated as the design was translated into working code:
+The application design has been updated to improve usability and full integration with the REST API.
 
-- **Project Structure:** Files were organized into controllers, DAOs, models, queries, routes, and services. 
-- **Database Integration:** A MySQL connection pool was introduced to manage queries efficiently and handle connection errors.
-- **Routes and Endpoints:** CRUD endpoints for `/notes` were fully created.
-- **Error Handling:** Some error-handling logic was added to return clear messages for database and route errors.
+- **REST API Integration:** Connected the Angular frontend to the REST API to perform create/read/update/delete operations on notes.  
+- **Nav Bar:** Added a responsive bootstrap NavBar to allow easy navigation between the pages.
+- **Product Form:** Updated the product form to handle required fields and include validation.
 
-These updates ensure the design plan is now fully aligned with the delivered software.
+These updates ensure that the frontend and backend work seamlessly, providing a functional and user-friendly experience while maintaining clear and structured code.
 
 
 ## Updates and Known Issues
 
-| Area                | Update Made                                                                 | Known Issues / To Do                |
+| Update / Issue                | Description                                                                  | Status                |
 |----------------------|-----------------------------------------------------------------------------|--------------------------------------|
-| Project Structure    | Split into controllers, DAOs, models, queries, routes, and services.        | None                                 |
-| Database Integration | Added MySQL connection pool with proper host/user/password configuration.   | None                                 |
-| API Endpoints        | Implemented full CRUD for `/notes`, plus search, favorites, and filters.    | None                                 |
-| Error Handling       | Added error messages for DB connection and missing resources.               | None                                 |
-| Design vs. Delivery  | Entire app was implemented from scratch; plan was adjusted into real code.  | None                                 |
+| REST API Integration    | Connected the Angular frontend to the backend API to perform Create, Read, Update, and Delete operations on products        | Completed                                 |
+| Navigation Bar | Added a responsive Bootstrap NavBar for easier navigation between pages   | Completed                                 |
+| Product Form Validation        | Updated the product form to include validation for required fields    | Completed                                 |
+
 
 ## Postman Screenshots
 
@@ -357,6 +357,5 @@ Response:
 - User input validation errors.  
 - Handling large text in notes efficiently.  
 
-## Conclusions
-This milestone added to the foundation of the Bible Notebook App by refining the design slightly and adding more detail. 
-It added defined REST endpoints with example API requests to support all user stories. These deliverables create a solid blueprint for implementaiton. This app is ready to transition to building and testing core features.
+## Conclusion
+This milestone delivered a working Angular application integrated with a REST API. The system supports all required product operations, including listing, creating, updating, and deleting, while also providing navigation through a Bootstrap-based interface. Key updates such as form validation and error handling improved usability and reliability. Although some minor issues remain, the project demonstrates the ability to design, build, and integrate a full-stack solution. These results provide a strong foundation for future improvements and enhancements.

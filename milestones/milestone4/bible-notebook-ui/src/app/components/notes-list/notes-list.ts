@@ -1,9 +1,8 @@
-
 import { Component, OnInit } from '@angular/core';
-import { NoteService } from '../../services/note';
-import { Note } from '../../models/note';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NoteService } from '../../services/note';
+import { Note } from '../../models/note';
 
 @Component({
   selector: 'app-notes-list',
@@ -21,15 +20,19 @@ export class NotesListComponent implements OnInit {
     this.loadNotes();
   }
 
-  loadNotes() {
-    this.noteService.getNotes().subscribe(data => {
+  loadNotes(): void {
+    this.noteService.getAllNotes().subscribe((data: Note[]) => {
       this.notes = data;
     });
   }
 
-  deleteNote(id: number) {
+  deleteNote(id: number): void {
+    if (!confirm('Are you sure you want to delete this note?')) {
+      return;
+    }
+
     this.noteService.deleteNote(id).subscribe(() => {
-      this.loadNotes();
+      this.loadNotes(); // reload notes after deletion
     });
   }
 }
