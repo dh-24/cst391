@@ -4,7 +4,7 @@
 - Date: 9/28/2025
 
 ## Recordings
-- [Link to powerpoint video]
+- [Link to powerpoint video](https://www.loom.com/share/0041ea555a464428807ad5120c180ff2)
 - [Link to UI screencast](https://www.loom.com/share/ec1732572e6c4ef89b9c66070b36ce4b?sid=03afd3d6-816c-4f66-b505-bb4da53113d7)
   
 ## Introduction
